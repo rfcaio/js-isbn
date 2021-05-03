@@ -10,4 +10,12 @@ describe('ISBN10', () => {
     expect(() => new ISBN10('123456789')).toThrow(Error)
     expect(() => new ISBN10('123456789x')).toThrow('Invalid ISBN-10 format.')
   })
+
+  test('throws an error if an invalid ISBN-10 is passed', () => {
+    expect(() => new ISBN10('1932698184')).toThrow(Error)
+    expect(() => new ISBN10('1932698184')).toThrow('Invalid ISBN-10 code.')
+
+    expect(() => new ISBN10('1932698183')).not.toThrow(Error)
+    expect(() => new ISBN10('855080603X')).not.toThrow(Error)
+  })
 })

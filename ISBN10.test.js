@@ -28,10 +28,15 @@ describe('ISBN10', () => {
   })
 
   test('throws an error if an invalid ISBN-10 is passed', () => {
-    expect(() => new ISBN10('1932698184')).toThrow(Error)
-    expect(() => new ISBN10('1932698184')).toThrow('Invalid ISBN-10 code.')
+    const createInvalidISBN10 = () => new ISBN10('1932698184')
 
-    expect(() => new ISBN10('1932698183')).not.toThrow(Error)
-    expect(() => new ISBN10('855080603X')).not.toThrow(Error)
+    expect(createInvalidISBN10).toThrow(Error)
+    expect(createInvalidISBN10).toThrow('Invalid ISBN-10 code.')
+
+    const createValidISBN10 = () => new ISBN10('1932698183')
+    expect(createValidISBN10).not.toThrow(Error)
+
+    const createValidISBN10WithFinalX = () => new ISBN10('855080603X')
+    expect(createValidISBN10WithFinalX).not.toThrow(Error)
   })
 })

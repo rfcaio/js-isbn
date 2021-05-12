@@ -39,4 +39,11 @@ describe('ISBN10', () => {
     const createValidISBN10WithFinalX = () => new ISBN10('855080603X')
     expect(createValidISBN10WithFinalX).not.toThrow(Error)
   })
+
+  describe('format', () => {
+    test('formats an ISBN-10 value instance', () => {
+      const isbn = new ISBN10('855080603X')
+      expect(isbn.format()).toEqual('85-508-0603-X')
+    })
+  })
 })

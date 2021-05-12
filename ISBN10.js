@@ -1,3 +1,4 @@
+const ISBN10_DIGIT_GROUPS = /^(\d{2})(\d{3})(\d{4})([0-9X])$/
 const VALID_ISBN10_FORMAT = /^\d{9}[0-9X]$/
 
 class ISBN10 {
@@ -13,6 +14,8 @@ class ISBN10 {
     if (this._getISBN10Checksum(value) % 11 !== 0) {
       throw new Error('Invalid ISBN-10 code.')
     }
+
+    this._value = value
   }
 
   _getISBN10Checksum(value) {
@@ -24,6 +27,10 @@ class ISBN10 {
       result += coefficient * digit
     }
     return result
+  }
+
+  format() {
+    return this._value.replace(ISBN10_DIGIT_GROUPS, '$1-$2-$3-$4')
   }
 }
 

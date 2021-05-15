@@ -46,4 +46,11 @@ describe('ISBN10', () => {
       expect(isbn.format()).toEqual('85-508-0603-X')
     })
   })
+
+  describe('value', () => {
+    test('returns an ISBN-10 value instance', () => {
+      const isbn = new ISBN10('1932698183')
+      expect(isbn.value).toEqual('1932698183')
+    })
+  })
 })

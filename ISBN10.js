@@ -36,6 +36,10 @@ class ISBN10 {
   format() {
     return this._value.replace(ISBN10_DIGIT_GROUPS, '$1-$2-$3-$4')
   }
+
+  get value() {
+    return this._value
+  }
 }
 
 module.exports = ISBN10

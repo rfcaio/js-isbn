@@ -11,11 +11,15 @@ class ISBN10 {
       throw new Error('Invalid ISBN-10 format.')
     }
 
-    if (this._getISBN10Checksum(value) % 11 !== 0) {
+    if (this._isISBN10NotValid(value)) {
       throw new Error('Invalid ISBN-10 code.')
     }
 
     this._value = value
+  }
+
+  _isISBN10NotValid(value) {
+    return this._getISBN10Checksum(value) % 11 !== 0
   }
 
   _getISBN10Checksum(value) {

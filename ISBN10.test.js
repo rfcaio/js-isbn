@@ -8,23 +8,25 @@ describe('ISBN10', () => {
     expect(createISBN10WithInvalidType).toThrow('Invalid type.')
   })
 
-  test('throws an error if a string with invalid format is passed', () => {
-    const createISBN10LessThanTenCharacters = () => new ISBN10('123456789')
+  test('throws an error if a string lower than ten characters is passed', () => {
+    const createInvalidISBN10 = () => new ISBN10('123456789')
 
-    expect(createISBN10LessThanTenCharacters).toThrow(Error)
-    expect(createISBN10LessThanTenCharacters).toThrow('Invalid ISBN-10 format.')
+    expect(createInvalidISBN10).toThrow(Error)
+    expect(createInvalidISBN10).toThrow('Invalid ISBN-10 format.')
+  })
 
-    const createISBN10GreaterThanTenCharacters = () => new ISBN10('0123456789X')
+  test('throws an error if a string greater than ten characters is passed', () => {
+    const createInvalidISBN10 = () => new ISBN10('0123456789X')
 
-    expect(createISBN10GreaterThanTenCharacters).toThrow(Error)
-    expect(createISBN10GreaterThanTenCharacters).toThrow(
-      'Invalid ISBN-10 format.'
-    )
+    expect(createInvalidISBN10).toThrow(Error)
+    expect(createInvalidISBN10).toThrow('Invalid ISBN-10 format.')
+  })
 
-    const createISBN10WithLowerFinalX = () => new ISBN10('123456789x')
+  test('throws an error if a string with a small x at the end is passed', () => {
+    const createInvalidISBN10 = () => new ISBN10('123456789x')
 
-    expect(createISBN10WithLowerFinalX).toThrow(Error)
-    expect(createISBN10WithLowerFinalX).toThrow('Invalid ISBN-10 format.')
+    expect(createInvalidISBN10).toThrow(Error)
+    expect(createInvalidISBN10).toThrow('Invalid ISBN-10 format.')
   })
 
   test('throws an error if an invalid ISBN-10 is passed', () => {

@@ -1,18 +1,20 @@
+const InvalidISBN10Error = require('./InvalidISBN10Error')
+
 const ISBN10_DIGIT_GROUPS = /^(\d{2})(\d{3})(\d{4})([0-9X])$/
 const VALID_ISBN10_FORMAT = /^\d{9}[0-9X]$/
 
 class ISBN10 {
   constructor(value) {
     if (this._hasInvalidType(value)) {
-      throw new Error('Invalid type.')
+      throw new InvalidISBN10Error('Invalid type.')
     }
 
     if (this._hasInvalidFormat(value)) {
-      throw new Error('Invalid ISBN-10 format.')
+      throw new InvalidISBN10Error('Invalid ISBN-10 format.')
     }
 
     if (this._isISBN10NotValid(value)) {
-      throw new Error('Invalid ISBN-10 code.')
+      throw new InvalidISBN10Error('Invalid ISBN-10 code.')
     }
 
     this._value = value

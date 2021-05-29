@@ -7,7 +7,7 @@ class ISBN10 {
       throw new Error('Invalid type.')
     }
 
-    if (!VALID_ISBN10_FORMAT.test(value)) {
+    if (this._hasInvalidFormat(value)) {
       throw new Error('Invalid ISBN-10 format.')
     }
 
@@ -20,6 +20,10 @@ class ISBN10 {
 
   _hasInvalidType(value) {
     return typeof value !== 'string'
+  }
+
+  _hasInvalidFormat(value) {
+    return !VALID_ISBN10_FORMAT.test(value)
   }
 
   _isISBN10NotValid(value) {

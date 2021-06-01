@@ -41,8 +41,8 @@ describe('ISBN10', () => {
     const createValidISBN10 = () => new ISBN10('1932698183')
     expect(createValidISBN10).not.toThrow(InvalidISBN10Error)
 
-    const createValidISBN10WithSmallXAtEnd = () => new ISBN10('855080603X')
-    expect(createValidISBN10WithSmallXAtEnd).not.toThrow(InvalidISBN10Error)
+    const createValidISBN10WithCapitalXAtEnd = () => new ISBN10('855080603X')
+    expect(createValidISBN10WithCapitalXAtEnd).not.toThrow(InvalidISBN10Error)
   })
 
   describe('format', () => {

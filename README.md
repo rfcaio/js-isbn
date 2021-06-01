@@ -12,7 +12,7 @@ Create an instance using `ISBN10` constructor.
 const isbn = new ISBN10('855080603X')
 ```
 
-##### format
+##### `format`
 
 Returns a formated `ISBN10` instance value.
 
@@ -20,7 +20,7 @@ Returns a formated `ISBN10` instance value.
 isbn.format() // 85-508-0603-X
 ```
 
-##### value
+##### `value`
 
 Returns an `ISBN10` instance value.
 

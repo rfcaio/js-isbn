@@ -1,7 +1,9 @@
+const InvalidISBN13Error = require('./InvalidISBN13Error')
+
 class ISBN13 {
   constructor(value) {
     if (this._hasInvalidType(value)) {
-      throw Error('Invalid type.')
+      throw new InvalidISBN13Error('Invalid type.')
     }
   }
 

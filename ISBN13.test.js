@@ -22,4 +22,11 @@ describe('ISBN13', () => {
     expect(createInvalidISBN13).toThrow(InvalidISBN13Error)
     expect(createInvalidISBN13).toThrow('Invalid ISBN-13 format.')
   })
+
+  test('throws an error if an invalid ISBN-13 is passed', () => {
+    const createInvalidISBN13 = () => new ISBN13('9788550804600')
+
+    expect(createInvalidISBN13).toThrow(InvalidISBN13Error)
+    expect(createInvalidISBN13).toThrow('Invalid ISBN-13 code.')
+  })
 })

@@ -40,4 +40,11 @@ describe('ISBN13', () => {
       InvalidISBN13Error
     )
   })
+
+  describe('value', () => {
+    test('returns an ISBN-13 value instance', () => {
+      const isbn = new ISBN13('9788550804606')
+      expect(isbn.value).toEqual('9788550804606')
+    })
+  })
 })

@@ -15,6 +15,8 @@ class ISBN13 {
     if (this._isISBN13NotValid(value)) {
       throw new InvalidISBN13Error('Invalid ISBN-13 code.')
     }
+
+    this._value = value
   }
 
   _hasInvalidType(value) {
@@ -41,6 +43,10 @@ class ISBN13 {
       result += coefficient * digit
     }
     return result
+  }
+
+  get value() {
+    return this._value
   }
 }
 

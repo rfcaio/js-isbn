@@ -41,6 +41,13 @@ describe('ISBN13', () => {
     )
   })
 
+  describe('format', () => {
+    test('formats an ISBN-13 value instance', () => {
+      const isbn = new ISBN13('9788576059240')
+      expect(isbn.format()).toEqual('978-85-760-5924-0')
+    })
+  })
+
   describe('value', () => {
     test('returns an ISBN-13 value instance', () => {
       const isbn = new ISBN13('9788550804606')

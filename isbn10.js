@@ -5,7 +5,7 @@ const VALID_ISBN10_FORMAT = /^\d{9}[0-9X]$/
 
 class ISBN10 {
   constructor(value) {
-    if (this._hasInvalidType(value)) {
+    if (typeof value !== 'string') {
       throw new InvalidISBN10Error('Invalid type.')
     }
 
@@ -18,10 +18,6 @@ class ISBN10 {
     }
 
     this._value = value
-  }
-
-  _hasInvalidType(value) {
-    return typeof value !== 'string'
   }
 
   _hasInvalidFormat(value) {

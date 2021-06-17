@@ -1,4 +1,4 @@
-const InvalidISBN10Error = require('./InvalidISBN10Error')
+const InvalidISBN10Error = require('./invalid-isbn10-error')
 
 const ISBN10_DIGIT_GROUPS = /^(\d{2})(\d{3})(\d{4})([0-9X])$/
 const VALID_ISBN10_FORMAT = /^\d{9}[0-9X]$/

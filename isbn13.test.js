@@ -1,5 +1,5 @@
-const ISBN13 = require('./ISBN13')
-const InvalidISBN13Error = require('./InvalidISBN13Error')
+const ISBN13 = require('./isbn13')
+const InvalidISBN13Error = require('./invalid-isbn13-error')
 
 describe('ISBN13', () => {
   test('throws an error if a non string parameter is passed', () => {

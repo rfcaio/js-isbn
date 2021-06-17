@@ -1,4 +1,4 @@
-const InvalidISBN13Error = require('./InvalidISBN13Error')
+const InvalidISBN13Error = require('./invalid-isbn13-error')
 
 const ISBN13_DIGIT_GROUPS = /^(\d{3})(\d{2})(\d{3})(\d{4})(\d)$/
 const VALID_ISBN13_FORMAT = /^\d{13}$/

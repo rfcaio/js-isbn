@@ -45,6 +45,11 @@ describe('ISBN10', () => {
     expect(createValidISBN10WithCapitalXAtEnd).not.toThrow(InvalidISBN10Error)
   })
 
+  test('returns ISBN-10 instance value at string conversion', () => {
+    const isbn = new ISBN10('1932698183')
+    expect(String(isbn)).toEqual('1932698183')
+  })
+
   describe('format', () => {
     test('formats an ISBN-10 value instance', () => {
       const isbn = new ISBN10('855080603X')

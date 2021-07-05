@@ -46,6 +46,10 @@ class ISBN10 {
   get value() {
     return this._value
   }
+
+  toString() {
+    return this.value
+  }
 }
 
 module.exports = ISBN10

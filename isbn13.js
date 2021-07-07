@@ -3,7 +3,7 @@ const InvalidIsbn13Error = require('./invalid-isbn13-error')
 const ISBN13_DIGIT_GROUPS = /^(\d{3})(\d{2})(\d{3})(\d{4})(\d)$/
 const VALID_ISBN13_FORMAT = /^\d{13}$/
 
-class ISBN13 {
+class Isbn13 {
   constructor(value) {
     if (typeof value !== 'string') {
       throw new InvalidIsbn13Error('Invalid type.')
@@ -55,4 +55,4 @@ class ISBN13 {
   }
 }
 
-module.exports = ISBN13
+module.exports = Isbn13

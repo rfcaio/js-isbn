@@ -1,7 +1,7 @@
 const Isbn13 = require('./isbn13')
 const InvalidIsbn13Error = require('./invalid-isbn13-error')
 
-describe('ISBN13', () => {
+describe('Isbn13', () => {
   test('throws an error if a non string parameter is passed', () => {
     const createISBN13WithInvalidType = () => new Isbn13(9788550804606)
 

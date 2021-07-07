@@ -3,7 +3,7 @@ const InvalidIsbn10Error = require('./invalid-isbn10-error')
 const ISBN10_DIGIT_GROUPS = /^(\d{2})(\d{3})(\d{4})([0-9X])$/
 const VALID_ISBN10_FORMAT = /^\d{9}[0-9X]$/
 
-class ISBN10 {
+class Isbn10 {
   constructor(value) {
     if (typeof value !== 'string') {
       throw new InvalidIsbn10Error('Invalid type.')
@@ -52,4 +52,4 @@ class ISBN10 {
   }
 }
 
-module.exports = ISBN10
+module.exports = Isbn10

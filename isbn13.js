@@ -13,7 +13,7 @@ class Isbn13 {
       throw new InvalidIsbn13Error('Invalid ISBN-13 format.')
     }
 
-    if (this._isISBN13NotValid(value)) {
+    if (this._isIsbn13NotValid(value)) {
       throw new InvalidIsbn13Error('Invalid ISBN-13 code.')
     }
 
@@ -24,15 +24,15 @@ class Isbn13 {
     return !VALID_ISBN13_FORMAT.test(value)
   }
 
-  _isISBN13NotValid(value) {
+  _isIsbn13NotValid(value) {
     const firstTwelveDigits = value.slice(0, 12)
     const valueVerifyDigit = parseInt(value.slice(-1), 10)
-    const checksumModTen = this._getISBN13Checksum(firstTwelveDigits) % 10
+    const checksumModTen = this._getIsbn13Checksum(firstTwelveDigits) % 10
     const verifyDigit = checksumModTen === 0 ? 0 : 10 - checksumModTen
     return verifyDigit !== valueVerifyDigit
   }
 
-  _getISBN13Checksum(value) {
+  _getIsbn13Checksum(value) {
     let result = 0
     for (const index in value) {
       const digit = parseInt(value[index], 10)

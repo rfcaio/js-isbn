@@ -1,4 +1,4 @@
-const InvalidISBN13Error = require('./invalid-isbn13-error')
+const InvalidIsbn13Error = require('./invalid-isbn13-error')
 
 const ISBN13_DIGIT_GROUPS = /^(\d{3})(\d{2})(\d{3})(\d{4})(\d)$/
 const VALID_ISBN13_FORMAT = /^\d{13}$/
@@ -6,15 +6,15 @@ const VALID_ISBN13_FORMAT = /^\d{13}$/
 class ISBN13 {
   constructor(value) {
     if (typeof value !== 'string') {
-      throw new InvalidISBN13Error('Invalid type.')
+      throw new InvalidIsbn13Error('Invalid type.')
     }
 
     if (this._hasInvalidFormat(value)) {
-      throw new InvalidISBN13Error('Invalid ISBN-13 format.')
+      throw new InvalidIsbn13Error('Invalid ISBN-13 format.')
     }
 
     if (this._isISBN13NotValid(value)) {
-      throw new InvalidISBN13Error('Invalid ISBN-13 code.')
+      throw new InvalidIsbn13Error('Invalid ISBN-13 code.')
     }
 
     this._value = value

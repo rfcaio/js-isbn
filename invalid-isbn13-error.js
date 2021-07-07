@@ -1,8 +1,8 @@
-class InvalidISBN13Error extends Error {
+class InvalidIsbn13Error extends Error {
   constructor(...params) {
     super(...params)
-    this.name = 'InvalidISBN13Error'
+    this.name = 'InvalidIsbn13Error'
   }
 }
 
-module.exports = InvalidISBN13Error
+module.exports = InvalidIsbn13Error

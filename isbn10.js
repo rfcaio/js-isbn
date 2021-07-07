@@ -13,7 +13,7 @@ class Isbn10 {
       throw new InvalidIsbn10Error('Invalid ISBN-10 format.')
     }
 
-    if (this._isISBN10NotValid(value)) {
+    if (this._isIsbn10NotValid(value)) {
       throw new InvalidIsbn10Error('Invalid ISBN-10 code.')
     }
 
@@ -24,11 +24,11 @@ class Isbn10 {
     return !VALID_ISBN10_FORMAT.test(value)
   }
 
-  _isISBN10NotValid(value) {
-    return this._getISBN10Checksum(value) % 11 !== 0
+  _isIsbn10NotValid(value) {
+    return this._getIsbn10Checksum(value) % 11 !== 0
   }
 
-  _getISBN10Checksum(value) {
+  _getIsbn10Checksum(value) {
     let result = 0
     for (const index in value) {
       const digitString = value[index]

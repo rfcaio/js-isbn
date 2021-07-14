@@ -12,6 +12,12 @@ Create an instance using `Isbn10` constructor.
 const isbn = new Isbn10('855080603X')
 ```
 
+A string conversion returns the instance value.
+
+```js
+String(isbn) // 855080603X
+```
+
 ##### `format`
 
 Returns a formated `Isbn10` instance value.
@@ -34,6 +40,12 @@ Create an instance using `Isbn13` constructor.
 
 ```js
 const isbn = new Isbn13('9788550804606')
+```
+
+A string conversion returns the instance value.
+
+```js
+String(isbn) // 9788550804606
 ```
 
 ##### `format`
